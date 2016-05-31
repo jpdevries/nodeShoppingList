@@ -38,7 +38,6 @@ var app = express();
 app.use(express.static('public'));
 
 app.get('/items', function(request, response){
-  
   response.json(storage.items);
 });
 
@@ -61,12 +60,15 @@ app.put('/items/:id', jsonParser, function(request, response){
   if(!request.body){
     return response.sendStatus(400);
   };
-  var id = request.params.id;
+  var id = request.body.id;
   var name = request.body.name;
   storage.edit(id, name);
-  response.status(201).json(id);
+  response.status(200).json(id);
 });
 
 
 
 app.listen(process.env.PORT || 8080);
+
+exports.app = app;
+exports.storage = storage;

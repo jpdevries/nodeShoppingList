@@ -10,5 +10,10 @@
     "body-parser": "^1.15.1",
     "express": "^3.2.6",
     "socket.io": "~0.9.14"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.5.3"
   }
 }
